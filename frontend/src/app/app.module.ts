@@ -8,6 +8,7 @@ import { AdminRoutingModule } from './admin/admin-routing.module';
 import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { UserRoutingModule } from './user/user-routing.module';
+import { MaterialModule } from 'src/material.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserRoutingModule } from './user/user-routing.module';
     BrowserModule,
     AppRoutingModule,
     AdminRoutingModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
