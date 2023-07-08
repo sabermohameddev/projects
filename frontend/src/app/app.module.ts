@@ -3,14 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminRoutingModule } from './admin/admin-routing.module';
+import { UserComponent } from './user/user.component';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { UserRoutingModule } from './user/user-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminComponent,
+    UserComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminRoutingModule,
+    UserRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
