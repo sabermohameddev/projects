@@ -18,5 +18,7 @@ export class LoginComponent {
     password: this.formBuilder.control('', Validators.required)
   })
 
-  proceedLogin() {}
+  proceedLogin() {
+    
+  }
 }

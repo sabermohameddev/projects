@@ -1,0 +1,63 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { User } from '../models/user.model';
+import { Observable, catchError, switchMap, throwError } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+
+  constructor(private http: HttpClient) { }
+  
+  apiUrl = "http://localhost:3000/users";
+
+  getAllUsers() : Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
+  }
+
+  updateUser(id: number, data: User): Observable<User> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<User>(url, data)
+      .pipe(
+        catchError((error: any) => {
+          console.error('An error occurred:', error);
+          return throwError('Something went wrong. Please try again later.');
+        })
+      );
+  }
+
+  toggleActivation(id: number): Observable<User> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<User>(url)
+      .pipe(
+        catchError((error: any) => {
+          console.error('An error occurred:', error);
+          return throwError('Something went wrong. Please try again later.');
+        })
+      )
+      .pipe(
+        switchMap((user: User) => {
+          user.isActive = !user.isActive;
+          return this.http.put<User>(url, user);
+        })
+      );
+  }
+
+  changeUserRole(id: number, newRole: string): Observable<User> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<User>(url)
+      .pipe(
+        catchError((error: any) => {
+          console.error('An error occurred:', error);
+          return throwError('Something went wrong. Please try again later.');
+        })
+      )
+      .pipe(
+        switchMap((user: User) => {
+          user.role = newRole;
+          return this.http.put<User>(url, user);
+        })
+      );
+  }
+}
