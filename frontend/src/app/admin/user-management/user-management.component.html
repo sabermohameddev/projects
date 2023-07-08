@@ -1,0 +1,28 @@
+<p-table [value]="users" [paginator]="true" [rowsPerPageOptions]="[5, 10, 50]" [loading]="loading" [rows]="5">
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="firstName" style="width:20%">First Name <p-sortIcon field="code"></p-sortIcon></th>
+            <th pSortableColumn="lastName" style="width:20%">Last Name <p-sortIcon field="code"></p-sortIcon></th>
+            <th pSortableColumn="email" style="width:20%">Email <p-sortIcon field="code"></p-sortIcon></th>
+            <th pSortableColumn="role" style="width:20%">Role <p-sortIcon field="code"></p-sortIcon></th>
+            <th pSortableColumn="isActive" style="width:20%">Status <p-sortIcon field="code"></p-sortIcon></th>
+            <!-- Add more table headers for other user properties -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+        <tr>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+                <span [ngClass]="{ 'text-green-500': user.isActive, 'text-red-500': !user.isActive }"
+                        (click)="showConfirmation(user)"
+                        style="cursor: pointer;">
+                    {{ user.isActive ? 'Active' : 'Inactive' }}
+                </span>
+            </td>
+            <!-- Add more table cells for other user properties -->
+        </tr>
+    </ng-template>
+</p-table>

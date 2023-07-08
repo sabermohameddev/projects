@@ -5,6 +5,7 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { DropdownModule } from 'primeng/dropdown';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DropdownModule } from 'primeng/dropdown';
         TableModule,
         InputTextModule,
         InputMaskModule,
-        DropdownModule
+        DropdownModule,
+        DialogModule
     ]
 })
 

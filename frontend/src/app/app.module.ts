@@ -13,6 +13,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { ConfirmationDialogComponent } from './admin/user-management/confirmation-dialog/confirmation-dialog.component';
+import { DialogService } from 'primeng/dynamicdialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +27,9 @@ import { HttpClientModule } from "@angular/common/http";
     UserComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserManagementComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +38,11 @@ import { HttpClientModule } from "@angular/common/http";
     UserRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+    
+    providers: [DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

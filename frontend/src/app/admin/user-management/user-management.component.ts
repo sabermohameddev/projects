@@ -1,0 +1,75 @@
+import { Component, OnInit } from '@angular/core';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { UserService } from 'src/app/services/user.service';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { User } from 'src/app/models/user.model';
+
+@Component({
+  selector: 'app-user-management',
+  templateUrl: './user-management.component.html',
+  styleUrls: ['./user-management.component.scss']
+})
+export class UserManagementComponent implements OnInit {
+  users!: User[];
+  totalRecords!: number;
+  loading!: boolean;
+  ref!: DynamicDialogRef;
+
+  constructor(
+    private userService: UserService,
+    public dialogService: DialogService
+  ) { }
+
+  ngOnInit(): void {
+    this.loadUsers();
+  }
+
+  loadUsers(): void {
+    this.loading = true;
+    this.userService.getAllUsers()
+      .subscribe(
+        users => {
+          this.users = users;
+          this.totalRecords = users.length;
+          this.loading = false;
+        },
+        error => {
+          console.error('An error occurred:', error);
+          this.loading = false;
+        }
+      );
+  }
+
+  showConfirmation(user: User): void {
+    this.ref = this.dialogService.open(ConfirmationDialogComponent, {
+      width: '500px',
+      contentStyle: { 'max-height': '500px', 'overflow': 'auto' },
+      baseZIndex: 10000,
+      data: {
+        user: user,
+        action: user.isActive ? 'Deactivate' : 'Activate'
+      }
+    });
+
+    this.ref.onClose.subscribe((result: boolean) => {
+      if (result) {
+        this.toggleActivation(user);
+      }
+    });
+  }
+
+  toggleActivation(user: User): void {
+    user.isActive = !user.isActive;
+    this.userService.updateUser(user.id, user).subscribe(
+      updatedUser => {
+        const index = this.users.findIndex(u => u.id === updatedUser.id);
+        if (index !== -1) {
+          this.users[index] = updatedUser;
+        }
+      },
+      error => {
+        console.error('An error occurred:', error);
+      }
+    );
+  }
+}

@@ -9,4 +9,5 @@ export class User {
     phoneNumber!: string;
     address!: string;
     birthdate!: Date;
+    profession!: string;
 }
