@@ -1,1 +1,40 @@
-<p>register works!</p>
+<div class="h-full w-full">
+    <div class="flex justify-between">
+        <div >
+            <img src="../../assets/cc.jpg" alt="img" class="h-screen w-[40vw]"/>
+        </div>
+        <div class="min-h-screen flex items-center justify-center   w-[60vw]">
+            <form class="w-[80%]">
+                <h1 class="text-6xl text-center mb-8">Register</h1>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <input type="text" pInputText placeholder="First Name" formControlName="firstName" class="w-full"/>
+                    </div>
+                    <div>
+                        <input type="text" pInputText placeholder="Last Name" formControlName="lastName" class="w-full"/>
+                    </div>
+                    <div>
+                        <input type="email" pInputText placeholder="Email address" formControlName="email" class="w-full"/>
+                    </div>
+                    <div>
+                        <p-password placeholder="Password"  formControlName="password" [toggleMask]="true" inputStyleClass="w-full" styleClass="w-full"></p-password>
+                    </div>
+                    <div>
+                        <p-inputMask  mask="99/99/9999" placeholder="Birthdate" slotChar="mm/dd/yyyy" styleClass="w-full"></p-inputMask>
+                    </div>
+                    <div>
+                        <p-inputMask  mask="99-99-99-99-99" placeholder="Phone number" slotChar="00-00-00-00-00" styleClass="w-full"></p-inputMask>
+                    </div>
+                    <div>
+                        <p-dropdown placeholder="Profession" [options]="professions"  styleClass="w-full"></p-dropdown>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center gap-3 items-center mt-6">
+                    <button   class="bg-green-600 w-[80%] hover:bg-green-400 transition-all py-3 text-lg rounded-full text-white">Submit</button>
+                    <span>Already have an account? <a class="font-bold" routerLink="/login">Sign in</a></span>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
