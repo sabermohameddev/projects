@@ -14,11 +14,15 @@
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td>{{ user.email }}</td>
-            <td>{{ user.role }}</td>
             <td>
-                <span [ngClass]="{ 'text-green-500': user.isActive, 'text-red-500': !user.isActive }"
+                <span (click)="showRoleChangeModal(user)" class="cursor-pointer">
+                    {{ user.role }}
+                </span>
+            </td>
+            <td>
+                <span class="cursor-pointer" [ngClass]="{ 'text-green-500': user.isActive, 'text-red-500': !user.isActive }"
                         (click)="showConfirmation(user)"
-                        style="cursor: pointer;">
+                    >
                     {{ user.isActive ? 'Active' : 'Inactive' }}
                 </span>
             </td>
@@ -26,3 +30,13 @@
         </tr>
     </ng-template>
 </p-table>
+
+<dialog id="my_modal_2" class="modal">
+    <form method="dialog" class="modal-box">
+        <h3 class="font-bold text-lg">Hello!</h3>
+        <p class="py-4">Press ESC key or click outside to close</p>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+    </form>
+</dialog>

@@ -7,7 +7,7 @@
       "email": "john@example.com",
       "password": "password123",
       "isActive": false,
-      "role": "user",
+      "role": "Admin",
       "phoneNumber": "123456789",
       "address": "123 Street, City",
       "birthdate": "1990-01-01"
@@ -19,7 +19,7 @@
       "email": "jane@example.com",
       "password": "password456",
       "isActive": true,
-      "role": "admin",
+      "role": "Admin",
       "phoneNumber": "987654321",
       "address": "456 Avenue, Town",
       "birthdate": "1985-05-15"
@@ -31,7 +31,7 @@
       "email": "mike@example.com",
       "password": "password789",
       "isActive": false,
-      "role": "user",
+      "role": "User",
       "phoneNumber": "555123456",
       "address": "789 Road, Village",
       "birthdate": "1992-07-20"
@@ -43,7 +43,7 @@
       "email": "emily@example.com",
       "password": "passwordabc",
       "isActive": true,
-      "role": "user",
+      "role": "Manager",
       "phoneNumber": "789654123",
       "address": "321 Lane, City",
       "birthdate": "1988-12-10"
@@ -55,7 +55,7 @@
       "email": "david@example.com",
       "password": "passworddef",
       "isActive": true,
-      "role": "user",
+      "role": "User",
       "phoneNumber": "456789123",
       "address": "654 Boulevard, Town",
       "birthdate": "1995-03-25"
@@ -102,7 +102,7 @@
       "lastName": "Harris",
       "email": "andrew@example.com",
       "password": "password789",
-      "isActive": true,
+      "isActive": false,
       "role": "admin",
       "phoneNumber": "555123456",
       "address": "789 Road, Village",

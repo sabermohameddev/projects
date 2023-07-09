@@ -3,6 +3,7 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { UserService } from 'src/app/services/user.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { User } from 'src/app/models/user.model';
+import { RoleChangeModalComponent } from './role-change-modal/role-change-modal.component';
 
 @Component({
   selector: 'app-user-management',
@@ -60,6 +61,42 @@ export class UserManagementComponent implements OnInit {
 
   toggleActivation(user: User): void {
     user.isActive = !user.isActive;
+    this.userService.updateUser(user.id, user).subscribe(
+      updatedUser => {
+        const index = this.users.findIndex(u => u.id === updatedUser.id);
+        if (index !== -1) {
+          this.users[index] = updatedUser;
+        }
+      },
+      error => {
+        console.error('An error occurred:', error);
+      }
+    );
+  }
+
+  showRoleChangeModal(user: User): void {
+    const roles = ['Admin', 'Manager', 'User'];
+    this.ref = this.dialogService.open(RoleChangeModalComponent, {
+      header: 'Change Role',
+      width: '450px',
+      height: '320px',
+      contentStyle: { 'max-height': '350px', 'overflow': 'auto' },
+      baseZIndex: 10000,
+      data: {
+        currentRole: user.role,
+        roles: roles
+      }
+    });
+
+    this.ref.onClose.subscribe((selectedRole: string) => {
+      if (selectedRole) {
+        this.changeUserRole(user, selectedRole);
+      }
+    });
+  }
+
+  changeUserRole(user: User, newRole: string): void {
+    user.role = newRole;
     this.userService.updateUser(user.id, user).subscribe(
       updatedUser => {
         const index = this.users.findIndex(u => u.id === updatedUser.id);

@@ -11,12 +11,13 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { MaterialModule } from 'src/material.module';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { ConfirmationDialogComponent } from './admin/user-management/confirmation-dialog/confirmation-dialog.component';
 import { DialogService } from 'primeng/dynamicdialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RoleChangeModalComponent } from './admin/user-management/role-change-modal/role-change-modal.component';
 
 
 
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     RegisterComponent,
     UserManagementComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    RoleChangeModalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
     
     providers: [DialogService],
