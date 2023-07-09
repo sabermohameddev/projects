@@ -67,7 +67,7 @@
       "email": "sarah@example.com",
       "password": "passwordxyz",
       "isActive": true,
-      "role": "user",
+      "role": "User",
       "phoneNumber": "987321654",
       "address": "987 Drive, Village",
       "birthdate": "1991-09-05"
@@ -79,7 +79,7 @@
       "email": "michael@example.com",
       "password": "password123",
       "isActive": true,
-      "role": "user",
+      "role": "User",
       "phoneNumber": "123456789",
       "address": "123 Street, City",
       "birthdate": "1987-02-15"
@@ -91,7 +91,7 @@
       "email": "julia@example.com",
       "password": "password456",
       "isActive": true,
-      "role": "user",
+      "role": "User",
       "phoneNumber": "987654321",
       "address": "456 Avenue, Town",
       "birthdate": "1990-06-30"
@@ -103,7 +103,7 @@
       "email": "andrew@example.com",
       "password": "password789",
       "isActive": false,
-      "role": "admin",
+      "role": "Admin",
       "phoneNumber": "555123456",
       "address": "789 Road, Village",
       "birthdate": "1983-11-18"
@@ -115,7 +115,7 @@
       "email": "olivia@example.com",
       "password": "passwordabc",
       "isActive": true,
-      "role": "user",
+      "role": "User",
       "phoneNumber": "789654123",
       "address": "321 Lane, City",
       "birthdate": "1994-08-22"

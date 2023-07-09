@@ -18,6 +18,7 @@ import { ConfirmationDialogComponent } from './admin/user-management/confirmatio
 import { DialogService } from 'primeng/dynamicdialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoleChangeModalComponent } from './admin/user-management/role-change-modal/role-change-modal.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
 
 
 
@@ -31,7 +32,8 @@ import { RoleChangeModalComponent } from './admin/user-management/role-change-mo
     RegisterComponent,
     UserManagementComponent,
     ConfirmationDialogComponent,
-    RoleChangeModalComponent
+    RoleChangeModalComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
