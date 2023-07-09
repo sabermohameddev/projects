@@ -19,6 +19,8 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoleChangeModalComponent } from './admin/user-management/role-change-modal/role-change-modal.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { ProfileComponent } from './shared/profile/profile.component';
+import { ProfileContentComponent } from './admin/profile-content/profile-content.component';
 
 
 
@@ -33,7 +35,9 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
     UserManagementComponent,
     ConfirmationDialogComponent,
     RoleChangeModalComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProfileComponent,
+    ProfileContentComponent
   ],
   imports: [
     BrowserModule,
