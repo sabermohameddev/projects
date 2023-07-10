@@ -4,9 +4,9 @@
             <tr>
                 <th pSortableColumn="firstName" style="width:20%">First Name <p-sortIcon field="code"></p-sortIcon></th>
                 <th pSortableColumn="lastName" style="width:20%">Last Name <p-sortIcon field="code"></p-sortIcon></th>
-                <th pSortableColumn="email" style="width:20%">Email <p-sortIcon field="code"></p-sortIcon></th>
-                <th pSortableColumn="role" style="width:20%">Role <p-sortIcon field="code"></p-sortIcon></th>
-                <th pSortableColumn="isActive" style="width:20%">Status <p-sortIcon field="code"></p-sortIcon></th>
+                <th pSortableColumn="email" style="width:30%">Email <p-sortIcon field="code"></p-sortIcon></th>
+                <th pSortableColumn="role" style="width:15%">Role <p-sortIcon field="code"></p-sortIcon></th>
+                <th pSortableColumn="isActive" style="width:15%">Status <p-sortIcon field="code"></p-sortIcon></th>
                 <!-- Add more table headers for other user properties -->
             </tr>
         </ng-template>
@@ -16,7 +16,7 @@
                 <td>{{ user.lastName }}</td>
                 <td>{{ user.email }}</td>
                 <td>
-                    <span (click)="showRoleChangeModal(user)" class="cursor-pointer">
+                    <span (click)="showRoleChangeModal(user)" class="cursor-pointer px-1 py-1/2 bg-lime-600 rounded-md text-white">
                         {{ user.role }}
                     </span>
                 </td>

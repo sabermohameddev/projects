@@ -31,7 +31,7 @@
       "email": "mike@example.com",
       "password": "password789",
       "isActive": false,
-      "role": "User",
+      "role": "Manager",
       "phoneNumber": "555123456",
       "address": "789 Road, Village",
       "birthdate": "1992-07-20"
