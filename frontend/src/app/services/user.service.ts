@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
 import { Observable, catchError, switchMap, throwError } from 'rxjs';
+import { Role } from '../models/role.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,7 @@ export class UserService {
       );
   }
 
-  changeUserRole(id: number, newRole: string): Observable<User> {
+  changeUserRole(id: number, newRole: Role): Observable<User> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<User>(url)
       .pipe(

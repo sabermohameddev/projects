@@ -7,7 +7,7 @@ import { ProfileContentComponent } from './profile-content/profile-content.compo
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'admin',
     component: AdminComponent,
     children: [
       { path: '', component: HomeComponent},

@@ -4,6 +4,7 @@ import { UserService } from 'src/app/services/user.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { User } from 'src/app/models/user.model';
 import { RoleChangeModalComponent } from './role-change-modal/role-change-modal.component';
+import { Role } from 'src/app/models/role.enum';
 
 @Component({
   selector: 'app-user-management',
@@ -88,14 +89,14 @@ export class UserManagementComponent implements OnInit {
       }
     });
 
-    this.ref.onClose.subscribe((selectedRole: string) => {
+    this.ref.onClose.subscribe((selectedRole: Role) => {
       if (selectedRole) {
         this.changeUserRole(user, selectedRole);
       }
     });
   }
 
-  changeUserRole(user: User, newRole: string): void {
+  changeUserRole(user: User, newRole: Role): void {
     user.role = newRole;
     this.userService.updateUser(user.id, user).subscribe(
       updatedUser => {
