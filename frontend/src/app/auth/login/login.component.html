@@ -2,7 +2,7 @@
     <div class="flex justify-between">
         <div class="min-h-screen flex items-center justify-center  w-[60vw]">
             <form [formGroup]="loginForm"  (ngSubmit)="proceedLogin()">
-                <h1 class="text-6xl text-center">Welcome Back</h1>
+                <h1 class="text-6xl text-center font-serif">Welcome Back</h1>
                 <div class="mt-11">
                     <div class="mb-6">
                         <input type="email" pInputText placeholder="Enter your email" formControlName="email" class="w-full"/>
@@ -11,14 +11,14 @@
                         <p-password placeholder="Enter your password"  formControlName="password" [toggleMask]="true" inputStyleClass="w-full" styleClass="w-full"></p-password>
                     </div>
                     <div class="flex flex-col justify-center gap-3 items-center">
-                        <button   class="bg-green-600 w-full hover:bg-green-400 transition-all py-3 text-lg rounded-full text-white">Submit</button>
-                        <a routerLink="/register" class="text-green-600 w-full text-center border-green-600 border-2 py-3 text-lg rounded-full transition-all hover:bg-green-400 hover:border-green-400 hover:text-white">New User?</a>
+                        <button   class="bg-blue-600 w-full hover:bg-blue-500 transition-all py-3 text-lg rounded-full text-white">Submit</button>
+                        <a routerLink="/register" class="text-blue-600 w-full text-center border-blue-600 border-2 py-3 text-lg rounded-full transition-all hover:bg-blue-600 hover:border-blue-600 hover:text-white">New User?</a>
                     </div>
                 </div>
             </form>
         </div>
         <div >
-            <img src="../../assets/dd.jpg" alt="img" class="h-screen w-[70vw]"/>
+            <img src="../../assets/couverture.png" alt="img" class="h-screen w-[70vw]"/>
         </div>
     </div>
 </div>

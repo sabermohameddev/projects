@@ -30,8 +30,8 @@
       "lastName": "Johnson",
       "email": "mike@example.com",
       "password": "password789",
-      "isActive": false,
-      "role": "Manager",
+      "isActive": true,
+      "role": "User",
       "phoneNumber": "555123456",
       "address": "789 Road, Village",
       "birthdate": "1992-07-20"
@@ -42,7 +42,7 @@
       "lastName": "Brown",
       "email": "emily@example.com",
       "password": "passwordabc",
-      "isActive": true,
+      "isActive": false,
       "role": "Manager",
       "phoneNumber": "789654123",
       "address": "321 Lane, City",
@@ -119,6 +119,63 @@
       "phoneNumber": "789654123",
       "address": "321 Lane, City",
       "birthdate": "1994-08-22"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Breaking News: Magical Creatures Spotted in London",
+      "content": "A group of magical creatures, including unicorns and dragons, was sighted in the streets of London yesterday. Witnesses reported a magnificent display of magical prowess and the creatures seemed to be peacefully interacting with the Muggle population.",
+      "author": {
+        "id": 1,
+        "firstName": "Harry",
+        "lastName": "Potter"
+      },
+      "publishDate": "2023-07-05"
+    },
+    {
+      "id": 2,
+      "title": "Quidditch World Cup Postponed Due to Inclement Weather",
+      "content": "The highly anticipated Quidditch World Cup, scheduled to take place next week, has been postponed indefinitely due to severe weather conditions. Organizers are working on rescheduling the event and ensuring the safety of all participants and spectators.",
+      "author": {
+        "id": 2,
+        "firstName": "Hermione",
+        "lastName": "Granger"
+      },
+      "publishDate": "2023-07-06"
+    },
+    {
+      "id": 3,
+      "title": "New Potion Discovered: Elixir of Eternal Youth",
+      "content": "A breakthrough in potion-making has led to the discovery of the Elixir of Eternal Youth. This mythical potion is said to grant immortality and reverse the effects of aging. However, experts caution that further research and testing are needed before it can be safely used.",
+      "author": {
+        "id": 3,
+        "firstName": "Severus",
+        "lastName": "Snape"
+      },
+      "publishDate": "2023-07-07"
+    },
+    {
+      "id": 4,
+      "title": "New Defense Against the Dark Arts Professor at Hogwarts",
+      "content": "Hogwarts School of Witchcraft and Wizardry welcomes its newest Defense Against the Dark Arts professor, Professor Minerva McGonagall. With her extensive knowledge and experience, students can expect an exciting and enriching year of magical education.",
+      "author": {
+        "id": 4,
+        "firstName": "Minerva",
+        "lastName": "McGonagall"
+      },
+      "publishDate": "2023-07-08"
+    },
+    {
+      "id": 5,
+      "title": "Magical Art Exhibition Opens at Diagon Alley",
+      "content": "Art enthusiasts and wizards alike are flocking to Diagon Alley for the grand opening of the Magical Art Exhibition. The exhibition showcases breathtaking magical artworks from renowned wizards and witches, offering a glimpse into the enchanting world of wizarding artistry.",
+      "author": {
+        "id": 5,
+        "firstName": "Luna",
+        "lastName": "Lovegood"
+      },
+      "publishDate": "2023-07-09"
     }
   ]
 }

@@ -21,6 +21,9 @@ import { RoleChangeModalComponent } from './admin/user-management/role-change-mo
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { ProfileComponent } from './shared/profile/profile.component';
 import { ProfileContentComponent } from './admin/profile-content/profile-content.component';
+import { NewsComponent } from './admin/news/news.component';
+import { UsersidebarComponent } from './user/usersidebar/usersidebar.component';
+import { TasksComponent } from './user/tasks/tasks.component';
 
 
 
@@ -37,7 +40,10 @@ import { ProfileContentComponent } from './admin/profile-content/profile-content
     RoleChangeModalComponent,
     SidebarComponent,
     ProfileComponent,
-    ProfileContentComponent
+    ProfileContentComponent,
+    NewsComponent,
+    UsersidebarComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
