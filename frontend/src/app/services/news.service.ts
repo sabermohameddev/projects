@@ -35,4 +35,8 @@ export class NewsService {
     return this.http.delete<void>(url);
   }
 
+  saveNews(news: News): Observable<News> {
+    return this.http.post<News>(this.apiUrl, news);
+  }
+
 }

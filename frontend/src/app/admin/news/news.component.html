@@ -1,14 +1,54 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 pt-8">
-    <!-- News Article Cards -->
-    <div *ngFor="let article of news" class="bg-white shadow-lg rounded-lg">
-      <img src="../../../assets/test.jpg" alt="News Image" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-4">
-        <h3 class="text-xl font-bold mb-2">{{ article.title }}</h3>
-      </div>
+  <!-- News Article Cards -->
+  <div *ngFor="let article of news" class="bg-white shadow-lg rounded-lg">
+    <img [src]="article.imageUrl" alt="News Image" class="w-full h-48 object-cover rounded-t-lg">
+    <div class="p-4" >
+      <h3 class="text-xl font-bold mb-2">{{ article.title }}</h3>
+      <button class="p-button p-component p-button-delete mt-8" (click)="deleteNews(article)">
+        Delete
+      </button>
+      <button class="p-button p-component p-button-details" (click)="showDetailsModal(article)">
+        Details
+      </button>
     </div>
   </div>
-  
-  <button class="px-4 py-3 absolute bottom-8 shadow-md right-8 bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-300">
-    <i class="pi pi-plus text-white text-lg"></i>
-  </button>
-  
+</div>
+
+<button class="px-4 py-3 absolute bottom-8 shadow-md right-8 bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-300" (click)="showModal = true">
+  <i class="pi pi-plus text-white text-lg"></i>
+</button>
+
+<p-dialog [(visible)]="showModal" [modal]="true" [resizable]="false" [responsive]="true" [style]="{ width: '500px' }" header="Add News" [appendTo]="'body'">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="newsTitle">Title</label>
+      <input id="newsTitle" type="text" [(ngModel)]="newNews.title" class="p-inputtext" />
+    </div>
+    <div class="p-field">
+      <label for="newsContent">Content</label>
+      <textarea id="newsContent" [(ngModel)]="newNews.content" class="p-inputtextarea" style="background-color: white; border: 1px solid #ccc;"></textarea>
+    </div>
+    <div class="p-field">
+      <label for="newsAuthor">Author</label>
+      <input id="newsAuthor" type="text" [(ngModel)]="newNews.author" class="p-inputtext" />
+    </div>
+    <div class="p-field">
+      <label for="newsDate">Publish Date</label>
+      <input id="newsDate" type="date" [(ngModel)]="newNews.publishDate" class="p-inputtext" />
+    </div>
+    <div class="p-field">
+      <label for="newsImage">Image</label>
+      <input id="newsImage" type="file" (change)="onImageSelected($event)" class="p-inputtext" accept="image/*" />
+    </div>
+  </div>
+
+  <div class="p-dialog-footer">
+    <button type="button" class="p-button" style="background-color: blue; color: white; margin-top: 20px;" (click)="saveNews()">Save</button>
+    <button type="button" class="p-button" style="background-color: white; color: red; border: 1px solid red; margin-top: 20px;" (click)="showModal = false"
+    onmouseover="this.style.backgroundColor='red'; this.style.color='white';" 
+    onmouseout="this.style.backgroundColor='white'; this.style.color='red';"
+    onfocus="this.style.backgroundColor='red'; this.style.color='white';"
+    onblur="this.style.backgroundColor='white'; this.style.color='red';">
+    Cancel</button>
+  </div>
+</p-dialog>

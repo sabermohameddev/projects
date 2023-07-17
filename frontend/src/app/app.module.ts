@@ -24,6 +24,18 @@ import { ProfileContentComponent } from './admin/profile-content/profile-content
 import { NewsComponent } from './admin/news/news.component';
 import { UsersidebarComponent } from './user/usersidebar/usersidebar.component';
 import { TasksComponent } from './user/tasks/tasks.component';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { ProjectComponent } from './user/project/project.component';
+import { NewProjectComponent } from '../app/user/project/new-project/new-project.component';
+import { RouterModule, Routes } from '@angular/router';
+import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { NewsDetailsComponent } from './admin/news-details/news-details.component';
+import { CallendarComponent } from './user/callendar/callendar.component';
+import { MenuModule } from 'primeng/menu';
+
+
 
 
 
@@ -43,8 +55,13 @@ import { TasksComponent } from './user/tasks/tasks.component';
     ProfileContentComponent,
     NewsComponent,
     UsersidebarComponent,
-    TasksComponent
+    TasksComponent,
+    ProjectComponent,
+    NewProjectComponent,
+    NewsDetailsComponent,
+    CallendarComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -54,10 +71,15 @@ import { TasksComponent } from './user/tasks/tasks.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    DialogModule,
+    DynamicDialogModule,
+    InputTextareaModule,
+    MenuModule
   ],
     
     providers: [DialogService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user.component';
 import { TasksComponent } from './tasks/tasks.component';
 
+
 const routes: Routes = [
   {
     path: 'user',
@@ -12,8 +13,12 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent},
       { path: 'task', component: TasksComponent},
+     
     ]
   }
+
+  
+
 ];
 
 @NgModule({

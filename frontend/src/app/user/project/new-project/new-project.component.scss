@@ -1,0 +1,42 @@
+.form-control {
+    background-color: white; 
+    border: 2px;
+}
+
+
+.input-field {
+    border: 1px solid rgb(32, 32, 33); /* Blue border */
+    border-radius: 4px; /* Rounded border edges */
+    padding: 5px; /* Add padding for spacing */
+  }
+  
+  .input-field:focus {
+    outline: none; /* Remove focus outline */
+    border-color: rgb(32, 32, 33); /* Dark blue border color when focused */
+  }
+
+
+  .custom-textarea {
+    width: 100%; /* Adjust the width as needed */
+  }
+
+.save-button {
+    background-color: white; 
+    color: blue; 
+  }
+  
+  .save-button:hover {
+    background-color: blue; 
+    color: white; 
+  }
+
+
+  .cancel-button {
+    background-color: rgb(237, 44, 44); 
+    color: rgb(236, 236, 237);
+    margin-left: 2px;
+  }
+
+  .cancel-button:hover{
+    
+  }

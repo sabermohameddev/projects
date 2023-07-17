@@ -4,7 +4,7 @@ export interface News {
     id: number;
     title: string;
     content: string;
-    author: User;
+    author: User | null;
     publishDate: string;
     imageUrl: string;
   }

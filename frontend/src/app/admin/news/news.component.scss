@@ -1,0 +1,29 @@
+.p-button-delete {
+  background-color: white;
+  border-color: red ;
+  color: red ;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  margin-left: 22%;
+}
+
+.p-button-delete:hover {
+  background-color: red;
+  border-color: red;
+}
+
+
+
+.p-button-details {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  margin-left: 7px;
+  background-color: blue !important;
+  color: white !important;
+  border-color: blue !important;
+}
+
+.p-button-details:hover {
+  background-color: darkblue !important;
+  border-color: darkblue !important;
+}

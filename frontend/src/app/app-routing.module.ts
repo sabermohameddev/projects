@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { UserComponent } from './user/user.component';
+import { CallendarComponent } from '../app/user/callendar/callendar.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'user', component: UserComponent
-  }
+  },
+  
+  
+  
 ];
 
 @NgModule({
